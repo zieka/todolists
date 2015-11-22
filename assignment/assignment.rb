@@ -78,6 +78,7 @@ class Assignment
       # accept an id input parameter
       # use the TodoList Model class to get the TodoList associated with the `id` primary key
       # return the TodoList instance that matches the provided id
+      TodoList.find(id)
   end
 
   #
