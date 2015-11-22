@@ -35,6 +35,7 @@ class Assignment
       # accept offset and limit input parameters
       # use the User Model class to find all Users, ordered by `updated_at` ascending, with specified row offset and row limit
       # return a collection of User instances that represent the specified rows
+      User.all.offset(offset).limit(limit).order(updated_at: :asc)
   end
 
   def find_alllists(offset, limit)
