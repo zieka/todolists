@@ -11,4 +11,8 @@ class Profile < ActiveRecord::Base
   validates_inclusion_of :gender, :in => ["male", "female"]
   validates :first_name, exclusion: ["Sue"], if: "gender == 'male'"
 
+  def self.get_all_profiles(start_dt, end_dt)
+    where("birth_year BETWEEN #{start_dt} AND #{end_dt}").order(birth_year: :asc)
+  end
+
 end
